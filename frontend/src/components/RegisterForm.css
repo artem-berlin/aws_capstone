@@ -1,0 +1,33 @@
+.reg-form {
+
+    /*width: 50vw;*/
+    height: 40vh;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.reg-form__subtitle {
+    color: rgb(180, 184, 193);
+}
+
+.reg-form__form {
+    max-width: 360px;
+}
+
+.reg-form__keep-logged-in {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+    margin-bottom: 90px;
+}
+
+.reg-form__footer {
+    margin-top: 8px;
+}
+

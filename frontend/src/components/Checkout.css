@@ -1,0 +1,24 @@
+
+.Checkout {
+  margin: 20px auto;
+  text-align: left;
+  max-width: 1000px;
+}
+
+.Checkout .buttons {
+  margin: 20px auto;
+  max-width: 500px;
+  background-color:yellow;
+  color: blue;
+}
+
+
+.Checkout .buttons > * {
+  width: 100%;
+
+}
+
+.Checkout .checkout-grid {
+  padding: 0 20px;
+
+}
