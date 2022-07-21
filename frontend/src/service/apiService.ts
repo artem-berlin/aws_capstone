@@ -3,8 +3,7 @@ import {Credentials, CredentialsRegister, LineItem} from "../interfaces/interfac
 
 
 import {CartProductType} from "../CartMain/CartMainStyles";
-import {set} from "react-hook-form";
-import {useState} from "react";
+
 export const registerNewUser = ({email, password, passwordAgain} : CredentialsRegister) => {
     return fetch(`/api/clients`,{
         method: 'POST',

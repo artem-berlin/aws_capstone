@@ -4,7 +4,7 @@ import {Dispatch, SetStateAction} from "react";
 
 import {CartProductType} from "../../CartMain/CartMainStyles";
 
-import ProductAdminCart from "./ProductAdminCart";
+/* import ProductAdminCart from "./ProductAdminCart"; */
 
 
 interface ProductColumnProps{

@@ -17,6 +17,7 @@ export interface AuthInterface {
 export interface LineItem{
     productId : string;
     price : string;
+    amount : string;
 }
 export interface ShoppingCart{
     id : string;

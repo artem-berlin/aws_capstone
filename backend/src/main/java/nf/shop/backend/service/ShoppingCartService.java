@@ -32,13 +32,18 @@ public class ShoppingCartService {
         return shoppingCart.orElseGet(ShoppingCart::new);
     }
 
-    public void changeShoppingCart(String id, ShoppingCart changedShoppingCart) {
-        Optional<ShoppingCart> shoppingCart = shoppingCartRepository.findById(id);
-        if (shoppingCart.isPresent()){
-            ShoppingCart cartUnwrapped = shoppingCart.get();
-            shoppingCartRepository.save(cartUnwrapped);
-        }
+    public void changeShoppingCart(String id, ShoppingCart shoppingCart) {
     }
+
+//    public void changeShoppingCart(String id, ShoppingCart changedShoppingCart) {
+//        Optional<ShoppingCart> shoppingCart = shoppingCartRepository.findById(id);
+//        if (shoppingCart.isPresent()){
+//            ShoppingCart cartUnwrapped = shoppingCart.get();
+//            shoppingCartRepository.save(cartUnwrapped);
+//        }
+//    }
+
+
 }
 
 

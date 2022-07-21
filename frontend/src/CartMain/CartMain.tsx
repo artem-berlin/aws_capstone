@@ -11,7 +11,7 @@ import Product from "../Product/Product";
 import {CartProductType, SearchContainer} from "./CartMainStyles";
 import {getAllProducts, getProductsByCategory} from "../service/apiService";
 import {useAuth} from "../auth/AuthProvider";
-import {Language, Search} from "@material-ui/icons";
+import {Search} from "@material-ui/icons";
 
 import { Input } from '@material-ui/core';
 

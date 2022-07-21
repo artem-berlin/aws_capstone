@@ -1,11 +1,9 @@
 
-
 import './Checkout.css';
 import { Button, Checkbox, FormControlLabel, Grid, TextField, Typography } from '@material-ui/core';
-import React, {useContext, useState} from 'react';
-import CartProduct from "../CartProduct/CartProduct";
+
 import {useNavigate} from "react-router-dom";
-import {CartProductType} from "../CartMain/CartMainStyles";
+
 import {ShoppingCart} from "../interfaces/interfaces";
 
 // ask Andre HISTORY!!!
@@ -16,10 +14,10 @@ interface Props {
 
 const Checkout: React.FC<Props> = (props: Props) => {
   const nav= useNavigate();
-
+console.log(props.shoppingCart);
   const totalPrice = props.shoppingCart.items
-      .map(lineItem => lineItem.price)
-      .reduce((p, c) => '' + (parseInt(p) + parseInt(c)), '0');
+      .map(lineItem => parseInt(lineItem.price) * parseInt(lineItem.amount))
+      .reduce((p, c) => (p + c), 0);
 
 
   /*function handleCheckout() {

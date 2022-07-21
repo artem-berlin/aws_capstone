@@ -7,5 +7,6 @@ public class LineItem {
  private String productId;
 
    private String price;
+   private String amount;
 
 }

@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 
-import ProductAdminColumn from "./ProductAdminColumn";
 import ProductAdminForm from "./ProductAdminForm";
 import {useAuth} from "../../auth/AuthProvider";
 

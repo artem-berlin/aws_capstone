@@ -23,9 +23,9 @@ const Cart: React.FC<Props> = ({ cartProducts, addToCart, removeFromCart }) => {
 
   const calculateTotal = (products: CartProductType[]) =>
     products.reduce((ack: number, product) => ack + product.amount * product.price, 0);
-
+/* add amount to fix chopping cart problem */
   const checkout =() =>{
-    checkoutTotal(token, cartProducts.map(p => ({productId: p.id, price: '' + p.price})))
+    checkoutTotal(token, cartProducts.map(p => ({productId: p.id, price: '' + p.price,amount:p.amount + ""})))
         .then(response => response.json())
         .then((shoppingCart: ShoppingCart) => nav('/checkout/' + shoppingCart.id))
   };
