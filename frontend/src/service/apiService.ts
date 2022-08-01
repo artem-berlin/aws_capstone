@@ -76,7 +76,7 @@ export const updateProduct = (id: string, product : CartProductType, token: stri
 
 
 export const getAllProducts = (token: string) => {
-    return fetch(`/api/main`,{
+    return fetch(apibaseURL+`/api/main`,{
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -87,7 +87,7 @@ export const getAllProducts = (token: string) => {
 
 
 export const getProductById = (id : string, token: string) => {
-     return fetch(`/api/main/${id}`,{
+     return fetch(apibaseURL+`/api/main/${id}`,{
          headers: {
              Authorization: `Bearer ${token}`
          }
@@ -102,7 +102,7 @@ export const getProductById = (id : string, token: string) => {
 }
 
 export const deleteProduct = (id: string, token: string) => {
-    return fetch(`/api/product/${id}`,{
+    return fetch(apibaseURL+`/api/product/${id}`,{
         method: 'DELETE',
         headers: {
             Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ export const deleteProduct = (id: string, token: string) => {
 
 export const getProductsByCategory = ( token: string, category: string) => {
 
-    return fetch(`/api/main/search?category=${category}`,{
+    return fetch(apibaseURL+`/api/main/search?category=${category}`,{
         headers: {
             Authorization: `Bearer ${token}`,
         }
@@ -125,7 +125,7 @@ export const getProductsByCategory = ( token: string, category: string) => {
 
 }
 export const checkoutTotal = (token: string,lineItems : LineItem[])=> {
-    return fetch ('/api/shoppingcart', {
+    return fetch (apibaseURL+'/api/shoppingcart', {
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
@@ -135,7 +135,7 @@ export const checkoutTotal = (token: string,lineItems : LineItem[])=> {
     })
 }
 export const getShoppingCartById =( token : string, id : string) =>{
-    return fetch('/api/shoppingcart/'+ id, {
+    return fetch(apibaseURL+'/api/shoppingcart/'+ id, {
         headers: {
             Authorization: `Bearer ${token}`,
         }
