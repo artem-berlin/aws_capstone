@@ -1,5 +1,4 @@
 import {FormEvent, useState} from "react";
-import {registerNewUser} from "../service/apiService";
 import {useAuth} from "../auth/AuthProvider";
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';

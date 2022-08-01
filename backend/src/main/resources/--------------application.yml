@@ -1,6 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: shop
-      host: db
-      port: 27017

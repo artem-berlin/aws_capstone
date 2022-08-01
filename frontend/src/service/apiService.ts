@@ -3,9 +3,9 @@ import {Credentials, CredentialsRegister, LineItem} from "../interfaces/interfac
 
 
 import {CartProductType} from "../CartMain/CartMainStyles";
-
+const apibaseURL=process.env.REACT_APP_BASE_URL
 export const registerNewUser = ({email, password, passwordAgain} : CredentialsRegister) => {
-    return fetch(`/api/clients`,{
+    return fetch(apibaseURL+`/api/clients`,{                                                                     //apibaseURL+
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -16,7 +16,7 @@ export const registerNewUser = ({email, password, passwordAgain} : CredentialsRe
 }
 
 export const loginUser = ({email, password} : Credentials) =>{
-    return fetch(`/api/auth/login`,{
+    return fetch(apibaseURL+`/api/auth/login`,{                                                                  //apibaseURL+
         method: 'POST',
         headers: {
            // Authorization: `Bearer ${token}`,
@@ -47,7 +47,7 @@ export const getAllProducts = (token: string) => {
 }
 */
 export const postNewProduct = (task: string, descript: string, token: string) => {
-    return fetch(`/api/product`, {
+    return fetch(apibaseURL+`/api/product`, {                                                                  //apibaseURL+
         method: 'POST',
         headers: {
             Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ export const postNewProduct = (task: string, descript: string, token: string) =>
 
 
 export const updateProduct = (id: string, product : CartProductType, token: string) => {
-    return fetch(`/api/product/${id}`,{
+    return fetch(apibaseURL+`/api/product/${id}`,{                                                     //apibaseURL+
         method: 'PUT',
         headers: {
             Authorization: `Bearer ${token}`,

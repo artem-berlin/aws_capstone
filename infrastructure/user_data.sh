@@ -1,2 +1,2 @@
- yum update
- yum install java-17
+sudo yum update
+sudo yum install java-17

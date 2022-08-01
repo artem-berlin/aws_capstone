@@ -44,28 +44,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors().configurationSource(corsConfigurationSource())
                 .and()
                 .authorizeRequests()
-//                .mvcMatchers("/api/client").hasAnyRole("Client", "ADMIN")      not nessecery
-                .mvcMatchers("/api/product").permitAll()
-       //
-                //        /* .antMatchers(HttpMethod.GET, "/api/product/**").permitAll()*/
+
+                .mvcMatchers("/api/product").permitAll()                
                 .mvcMatchers("/api/admin").hasRole("ADMIN")
                 .mvcMatchers("/api/main").authenticated()
                 .mvcMatchers(HttpMethod.GET, "/index*", "/static/**", "/*.js", "/*.json", "/*.ico","/*.png").permitAll()
-//                .antMatchers( "/swagger-resources/**","/swagger-ui./**","/swagger-ui.index.html/","/v3/api-docs/**").permitAll()
                 .mvcMatchers(HttpMethod.POST, "/api/clients").permitAll()
                 .mvcMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
+                .mvcMatchers(HttpMethod.POST, "/api/auth/register").permitAll()            //1.08
                 .mvcMatchers("/api/greeting").permitAll()               //permitAll()  200
-//                .antMatchers("/**").authenticated()
                 .and()
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-
+//                .antMatchers(HttpMethod.GET, "/api/product/**").permitAll()
+//                .mvcMatchers("/api/client").hasAnyRole("Client", "ADMIN")      not nessecery
+//                .antMatchers( "/swagger-resources/**","/swagger-ui./**","/swagger-ui.index.html/","/v3/api-docs/**").permitAll()
+//                .antMatchers("/**").authenticated()
     }
 
     private CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration  configuration = new CorsConfiguration();
         configuration.addAllowedOriginPattern("http://localhost:3000");
+        configuration.addAllowedOriginPattern("*");
         configuration.setAllowedMethods(List.of(CorsConfiguration.ALL));
         configuration.setAllowedHeaders(List.of(CorsConfiguration.ALL));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
