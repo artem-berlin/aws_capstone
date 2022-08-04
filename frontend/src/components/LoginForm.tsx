@@ -15,16 +15,13 @@ interface ISignInForm {
 export default function LoginForm(){
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
-    const [registerEmail, setRegisterEmail] = useState('')
-    const [registerPasswordOne, setRegisterPasswordOne] = useState('')
-    const [registerPasswordTwo, setRegisterPasswordTwo] = useState('')
-    const [error, setError] = useState('')
+     const [error, setError] = useState('')
 
-    const { handleSubmit, control } = useForm<ISignInForm>();
+    const { control } = useForm<ISignInForm>();
     const { errors } = useFormState({control})
     const auth = useAuth()
 
-    const onSubmit: SubmitHandler<ISignInForm> = data => console.log(data);
+    //const onSubmit: SubmitHandler<ISignInForm> = data => console.log(data);
     const Login = (event : FormEvent) => {
         event.preventDefault()
         setError('')

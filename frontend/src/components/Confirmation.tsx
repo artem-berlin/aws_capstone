@@ -11,7 +11,7 @@ interface Props {}
 const Confirmation: React.FC<Props> = props => {
 
     const nav= useNavigate();
-    const{token}=useAuth();
+    
 
 
     return (

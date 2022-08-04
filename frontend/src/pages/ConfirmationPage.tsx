@@ -16,8 +16,8 @@ export default function ConfirmationPage(){
         })
             .then(response => response.json())
 
-    }, []);
-
+    });
+   // }, []);
     return(
         <div className={'main'}>
             <Announcement/>

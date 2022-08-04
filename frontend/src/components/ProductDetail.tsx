@@ -4,7 +4,7 @@ import {CartProductType} from "../CartMain/CartMainStyles";
 import {Link, useNavigate} from "react-router-dom";
 import './ProductDetail.css';
 
-import { Button, Grid, InputLabel, MenuItem, Select, Snackbar, Typography } from '@material-ui/core';
+import { Button, Grid,Typography } from '@material-ui/core';
 
 interface ProductDetailProps{
     product : CartProductType

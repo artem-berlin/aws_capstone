@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import foto from '../assets/foto.jpg';
+
 
 export const Container = styled.div`
   height: 100%;

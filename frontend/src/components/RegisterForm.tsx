@@ -1,11 +1,11 @@
 import {FormEvent, useState} from "react";
 import {registerNewUser} from "../service/apiService";
-import {useAuth} from "../auth/AuthProvider";
+//import {useAuth} from "../auth/AuthProvider";
 import Typography from "@mui/material/Typography";
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
-import {loginValidation, passwordValidation} from "./validation";
-import { useForm, SubmitHandler, Controller, useFormState } from "react-hook-form";
+import {passwordValidation} from "./validation";
+import { useForm, Controller, useFormState } from "react-hook-form";
 import './RegisterForm.css';
 
 
@@ -20,9 +20,9 @@ export default function RegisterForm(){
     const [registerPasswordOne, setRegisterPasswordOne] = useState('')
     const [registerPasswordTwo, setRegisterPasswordTwo] = useState('')
     const [error, setError] = useState('')
-    const { handleSubmit, control } = useForm<ISignUpForm>();
+    const { control } = useForm<ISignUpForm>();
     const { errors } = useFormState({control})
-    const auth = useAuth()
+    //const auth = useAuth()
 
 
 
@@ -131,12 +131,3 @@ export default function RegisterForm(){
         </div>
     )
 }
-
-{/*    <h2>Register</h2>
-           <form onSubmit={Register}>
-                <input type="text" placeholder={'Email'} value={registerEmail} onChange={ev => setRegisterEmail(ev.target.value)}/>
-                <input type='password' placeholder={'Password'} value={registerPasswordOne} onChange={ev => setRegisterPasswordOne(ev.target.value)}/>
-                <input type='password' placeholder={'Passwort repeat'} value={registerPasswordTwo} onChange={ev => setRegisterPasswordTwo(ev.target.value)}/>
-                <button type={'submit'}>Register</button>
-            </form>
-            {error && <h2>{error}</h2>}*/}

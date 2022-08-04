@@ -1,13 +1,10 @@
 import {useEffect, useState} from "react";
-
-
-import {useNavigate, useParams} from "react-router-dom";
-
+import {useParams} from "react-router-dom";
 import {getProductById} from "../service/apiService";
 import NavBar from "../components/NavBar";
 import {useAuth} from "../auth/AuthProvider";
 import ProductDetail from "../components/ProductDetail";
-import Product from "../Product/Product";
+
 import {CartProductType} from "../CartMain/CartMainStyles";
 import Announcement from "../components/Announcement";
 
@@ -16,7 +13,7 @@ import Announcement from "../components/Announcement";
 export default function DetailsPage(){
 
     const auth = useAuth()
-    const nav = useNavigate()
+   // const nav = useNavigate()
     const [currentProduct, setCurrentProduct] = useState({} as CartProductType)
     const [error , setError] = useState('')
 
