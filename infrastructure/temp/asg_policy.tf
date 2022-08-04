@@ -1,12 +1,12 @@
-resource "aws_autoscaling_policy" "web_policy_up" {
-  name = "web_policy_up"
+resource "aws_autoscaling_policy" "shop_policy_up" {
+  name = "shop_policy_up"
   scaling_adjustment = 1
   adjustment_type = "ChangeInCapacity"
   cooldown = 300
-  autoscaling_group_name = "${aws_autoscaling_group.web.name}"
+  autoscaling_group_name = "${aws_autoscaling_group.shop.name}"
 }
-resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
-  alarm_name = "web_cpu_alarm_up"
+resource "aws_cloudwatch_metric_alarm" "shop_cpu_alarm_up" {
+  alarm_name = "shop_cpu_alarm_up"
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods = "2"
   metric_name = "CPUUtilization"
@@ -16,20 +16,20 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_up" {
   threshold = "70"
   
   dimensions = {
-    AutoScalingGroupName = "${aws_autoscaling_group.web.name}"
+    AutoScalingGroupName = "${aws_autoscaling_group.shop.name}"
   }
   alarm_description = "This metric monitor EC2 instance CPU utilization"
-  alarm_actions = [ "${aws_autoscaling_policy.web_policy_up.arn}" ]
+  alarm_actions = [ "${aws_autoscaling_policy.shop_policy_up.arn}" ]
 }
-resource "aws_autoscaling_policy" "web_policy_down" {
-  name = "web_policy_down"
+resource "aws_autoscaling_policy" "shop_policy_down" {
+  name = "shop_policy_down"
   scaling_adjustment = -1
   adjustment_type = "ChangeInCapacity"
   cooldown = 300
-  autoscaling_group_name = "${aws_autoscaling_group.web.name}"
+  autoscaling_group_name = "${aws_autoscaling_group.shop.name}"
 }
-resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_down" {
-  alarm_name = "web_cpu_alarm_down"
+resource "aws_cloudwatch_metric_alarm" "shop_cpu_alarm_down" {
+  alarm_name = "shop_cpu_alarm_down"
   comparison_operator = "LessThanOrEqualToThreshold"
   evaluation_periods = "2"
   metric_name = "CPUUtilization"
@@ -38,8 +38,8 @@ resource "aws_cloudwatch_metric_alarm" "web_cpu_alarm_down" {
   statistic = "Average"
   threshold = "30"
   dimensions = {
-    AutoScalingGroupName = "${aws_autoscaling_group.web.name}"
+    AutoScalingGroupName = "${aws_autoscaling_group.shop.name}"
   }
   alarm_description = "This metric monitor EC2 instance CPU utilization"
-  alarm_actions = [ "${aws_autoscaling_policy.web_policy_down.arn}" ]
+  alarm_actions = [ "${aws_autoscaling_policy.shop_policy_down.arn}" ]
 }

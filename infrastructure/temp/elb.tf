@@ -1,7 +1,7 @@
-resource "aws_elb" "web_elb" {
-  name = "web-elb"
+resource "aws_elb" "shop_elb" {
+  name = "shop-elb"
   security_groups = [
-    "${aws_security_group.demosg1.id}"
+    "${aws_security_group.shop.id}"
   ]
   subnets = [
     "${aws_subnet.demosubnet.id}",

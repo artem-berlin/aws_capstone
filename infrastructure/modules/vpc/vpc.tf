@@ -44,7 +44,7 @@ resource "aws_route_table_association" "b" {
 
 resource "aws_security_group" "inbound_outbound" {
   name        = "P80"
-  description = "Allow P80"
+  description = "Allow P80, 8080"
   vpc_id      = aws_vpc.endpoint_vpc.id
 
   ingress {
