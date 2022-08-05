@@ -36,11 +36,12 @@ export default function ProductDetail(props : ProductDetailProps){
                         <Typography variant="h6">Description</Typography>
                         <Typography variant="body2" component="div" color="textSecondary">
                             <p>{props.product.description}</p>
-                            <p>{"Product price:"+"  "+""+props.product.price + ""+"$"}</p>
+                            <p>{`Product price:  ${props.product.price} "$"`}</p>
+                           
                         </Typography>
                     </div>
-
                 </Typography>
+                
             </Grid>
         </Grid>
             <div/>

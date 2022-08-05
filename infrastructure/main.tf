@@ -55,7 +55,6 @@ module "vpc" {
   source = "./modules/vpc"
 }
 
-
   data "aws_caller_identity" "current" {}
 
 locals {
