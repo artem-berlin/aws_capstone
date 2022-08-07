@@ -3,7 +3,7 @@ import {useAuth} from "../auth/AuthProvider";
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useForm, SubmitHandler, Controller, useFormState } from "react-hook-form";
+import { useForm, Controller, useFormState } from "react-hook-form";
 import { loginValidation, passwordValidation } from './validation';
 import './LoginForm.css';
 
