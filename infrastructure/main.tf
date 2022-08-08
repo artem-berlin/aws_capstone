@@ -46,7 +46,9 @@ output "server_ip" {
   value = aws_instance.shop.public_ip
   
 }
- 
+ output "load_balancer_dns"{
+  value = aws_lb.shop-load-balancer.dns_name
+ }
 
 
 ### Modules ####
